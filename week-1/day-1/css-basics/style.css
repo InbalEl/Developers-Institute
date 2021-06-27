@@ -1,0 +1,21 @@
+.stripe {
+    display: inline-block;
+}
+
+#blue-stripe {
+    background-color: blue;
+    width: 100px;
+    height: 250px;
+}
+
+#white-stripe {
+    background-color: white;
+    width: 100px;
+    height: 250px;
+}
+
+#red-stripe {
+    background-color: red;
+    width: 100px;
+    height: 250px;
+}
