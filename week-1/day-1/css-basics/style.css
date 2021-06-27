@@ -1,3 +1,11 @@
+body {
+    font-family: gotham-rounded, helvetica neue, helvetica !important;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #29303b;
+}
+
 .stripe {
     display: inline-block;
 }
@@ -18,4 +26,66 @@
     background-color: red;
     width: 100px;
     height: 250px;
+}
+
+#greet {
+    color: floralwhite;
+    background-color: dodgerblue;
+    text-decoration: underline;
+}
+
+#ex2 {
+    background-color: #c0f7d7;
+    border-color: #27c76b;
+    border-style: ridge;
+    padding: 30px;
+    width: 550px;
+}
+
+#ex2 p {
+    margin: 0 0 10px 0;
+}
+
+div > ul > li:nth-child(2) {
+    color: blue;
+}
+
+div > ul > li {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+body > div:nth-child(8) > p:first-child{
+    background-color: pink;
+    color: white;
+}
+
+body > div:nth-child(8) > p:nth-child(3){
+    background-color: lightblue;
+    padding: 10px;
+    margin: 10px;
+}
+
+#gray-box {
+    background-color: #d2c8c9;
+    width: 600px;
+    height: 200px;
+    border: 5px solid lightgrey;
+}
+
+#blue-child-box {
+    background-color: #79c4f5;
+    height: 160px;
+    width: 160px;
+    position: relative;
+    top: 5px;
+}
+
+#orange-child-box {
+    background-color: #ff9b2d;
+    height: 160px;
+    width: 160px;
+    position: absolute;
+    top: 5px;
+    left: 5px;
 }
