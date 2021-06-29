@@ -1,0 +1,28 @@
+#box {
+    margin: 50px 200px;
+    border: 5px solid red;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#no1, #no2, #no3 {
+    background-color: #7fcff0;
+    text-align: center;
+    color: white;
+}
+
+
+#no1, #no3 {
+    height: 80px;
+    margin: 5px;
+}
+
+#no2 {
+    height: 240px;
+    width: 70%;
+    margin: 15px;
+    align-self: center;
+}

@@ -1,0 +1,35 @@
+#box {
+    margin: 50px 200px;
+    padding: 20px 10px;
+    border: 5px solid orange;
+    display: flex;
+    justify-content: space-around;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#nu_1, #nu_2, #nu_3 {
+    background-color: #7fcff0;
+    text-align: center;
+    height: 80px;
+    margin: 0px;
+    padding: 5px;
+}
+
+#nu_1 {
+    background-color: darkslateblue;
+    width: 20%;
+}
+
+#nu_2 {
+    background-color: cornflowerblue;
+    width: 40%;
+}
+
+#nu_3 {
+    background-color: orangered;
+    width: 40%;
+}
+
+h1 {
+    color: white;
+}
