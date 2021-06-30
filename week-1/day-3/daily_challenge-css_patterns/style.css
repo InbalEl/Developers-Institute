@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    padding: 5px 15px;
+    justify-content: space-between;
+}
+
+.yellowBox {
+    background: yellow;
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+.colBoxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1em;
+}
+
+.rowBoxes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10vh;
+    align-items: center;
+}
