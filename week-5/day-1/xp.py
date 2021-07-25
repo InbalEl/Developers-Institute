@@ -114,7 +114,6 @@ class Zoo:
                 curr_list = [animal]
                 first_letter = animal[0]
                     
-        print(groups_list)
         self.groups = {i+1: group for i, group in enumerate(groups_list)}
 
     def get_groups(self):
