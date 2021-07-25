@@ -17,7 +17,6 @@ def check_if_won(player: str, player_move: int, state: list) -> bool:
 
     return False
 
-    #Ugly, but I wanted to experiment with syntax
     # return (
     #     True for options_list in winning_paths for option in options_list if () else False
     # )
