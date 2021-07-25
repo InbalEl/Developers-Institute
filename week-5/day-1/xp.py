@@ -99,12 +99,28 @@ class Zoo:
     
     def sort_animals(self):
         self.animals.sort()
-        self.groups = dict(map(self.animals, numbers))
-    
+        
+        groups_list = []
+        curr_list = []
+        first_letter = self.animals[0][0]
+
+        for animal in self.animals:
+            if first_letter == animal[0]:
+                curr_list.append(animal)
+            else:
+                if curr_list:
+                    groups_list.append(curr_list)
+                    
+                curr_list = [animal]
+                first_letter = animal[0]
+                    
+        print(groups_list)
+        self.groups = {i+1: group for i, group in enumerate(groups_list)}
+
     def get_groups(self):
         if hasattr(self, 'groups'):
-            for group in self.groups:
-                print(group)
+            for i, group in self.groups.items():
+                print(f'{i} : {group}')
 
 ramat_gan_safari = Zoo('ramat_gan_safari')
 
@@ -121,7 +137,7 @@ ramat_gan_safari.add_animal('Python')
 ramat_gan_safari.add_animal('Ape')
 
 ramat_gan_safari.get_animals()
-ramat_gan_safari.sell_animal('Baboon')
+ramat_gan_safari.sell_animal('Hippo')
 ramat_gan_safari.sell_animal('cockatoo')
 ramat_gan_safari.get_animals()
 ramat_gan_safari.get_groups()
