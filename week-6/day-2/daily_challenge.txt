@@ -1,0 +1,123 @@
+CREATE TABLE FirstTab (
+     id integer, 
+     name VARCHAR(10)
+)
+
+INSERT INTO FirstTab VALUES
+(5,'Pawan'),
+(6,'Sharlee'),
+(7,'Krish'),
+(NULL,'Avtaar')
+
+SELECT * FROM FirstTab
+
+----------------------------------------------------
+# OUTPUT:
+--id--|--name--
+ 5    | Pawan
+ 6    | Sharlee
+ 7    | Krish
+ NULL | Avtaar
+
+# Was I correct?
+Almost - instead of saying NULL the field was empty
+
+---------------------------------------------------
+
+CREATE TABLE SecondTab (
+    id integer 
+)
+
+INSERT INTO SecondTab VALUES
+(5),
+(NULL)
+
+SELECT * FROM SecondTab
+
+----------------------------------------------------
+# OUTPUT:
+--id--|
+ 5    |
+      |
+
+# Was I correct?
+Yup
+
+---------------------------------------------------
+Q1
+
+SELECT COUNT(*)
+FROM FirstTab AS ft
+WHERE ft.id NOT IN
+    (SELECT id
+     FROM SecondTab
+     WHERE id IS NULL);
+
+# OUTPUT:
+count
+------
+    3
+
+# Was I correct?
+Nope, it was 0.
+Don't understand why, especially since I removed
+the NOT from the quary and still got a 0.
+Maybe I can't compare NULL to NULL?
+
+---------------------------------------------------
+Q2
+
+SELECT COUNT(*)
+FROM FirstTab AS ft
+WHERE ft.id NOT IN
+    (SELECT id FROM SecondTab
+    WHERE id = 5);
+
+# OUTPUT:
+count
+------
+    3
+
+# Was I correct?
+0.
+Wrong again, and I think I'm starting to understand.
+I don't think a compatison is being made between 2
+values when one of them is NULL.
+The loop mechanism behind the IN function disregards them.
+
+---------------------------------------------------
+Q3
+
+SELECT COUNT(*) 
+FROM FirstTab AS ft
+WHERE ft.id NOT IN
+    ( SELECT id FROM SecondTab )
+
+
+# OUTPUT:
+count
+------
+  2
+
+# Was I correct?
+Goddamnit. 0 again.
+
+---------------------------------------------------
+Q4
+
+SELECT COUNT(*) 
+FROM FirstTab AS ft
+WHERE ft.id NOT IN
+    (SELECT id FROM SecondTab
+    WHERE id IS NOT NULL)
+
+
+# OUTPUT:
+count
+------
+  0
+
+# Was I correct?
+Why on earth did I just get 2?
+
+---------------------------------------------------
